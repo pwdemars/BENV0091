@@ -1,5 +1,6 @@
 ---
 title: "Occupancy Prediction"
+author: "Jessica Steinemann"
 output:
   html_document:
     df_print: paged
@@ -87,7 +88,6 @@ train %>%
   facet_wrap(~variable, scales = 'free_y')
 ```
 
-
 ### Fitting a Logistic Regression Model (glm)
 
 ```{r}
@@ -134,7 +134,7 @@ Notice that sensitivity (true positive rate) is a lot lower than the true negati
 
 ### Showing the imbalance
 
-There are over 3x as many observations of where `Occupancy == 0` as compared with `Occupancy == 1`. 
+There are over 3x as many observations of where `Occupancy == 0` as compared with `Occupancy == 1`.
 
 ```{r}
 count(train, Occupancy)
@@ -153,10 +153,9 @@ tidy(log_reg) %>%
   geom_pointrange(size = 1)
 ```
 
-
 ### Downsampling
 
-The following function can be used to randomly downsample a data frame by Occupancy. It uses completely random sampling. There are more sophisticated methods which aim to do this in a more robust (but still random) way to preserve variance in the dataset. 
+The following function can be used to randomly downsample a data frame by Occupancy. It uses completely random sampling. There are more sophisticated methods which aim to do this in a more robust (but still random) way to preserve variance in the dataset.
 
 The output of this chunk shows that after the downsampling function is applied, the classes are balanced.
 
@@ -199,8 +198,8 @@ train %>%
 
 In the following code we will apply two pre-processing techniques to achieve build a more robust model (thanks to downsampling) that is more intepretable too (due to standardisation):
 
-- Downsampling
-- Standardisation 
+-   Downsampling
+-   Standardisation
 
 ```{r}
 set.seed(2021)
@@ -257,4 +256,3 @@ tidy(log_reg) %>%
   geom_pointrange()
 
 ```
-
