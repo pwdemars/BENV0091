@@ -1,5 +1,6 @@
 ---
 title: "Occupancy Prediction"
+author: "Masa Aoki"
 output:
   html_document:
     df_print: paged
