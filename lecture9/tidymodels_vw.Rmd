@@ -11,7 +11,6 @@ editor_options:
 knitr::opts_chunk$set(message = FALSE)
 ```
 
-
 ### Imports
 
 ```{r}
@@ -33,7 +32,6 @@ df <- read_csv('data/vw_train.csv') %>%
 Next we will split the data into train/test sets, using `initial_time_split()`: 
 
 ```{r}
-set.seed(123)
 data_split <- initial_time_split(df, prop = 3/4)
 
 train <- training(data_split)
