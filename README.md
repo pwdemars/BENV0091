@@ -1,3 +1,3 @@
 # BENV0091: Energy Data Analysis (EDA)
 
-**Patrick de Mars**
+Lectures from 2021 (Patrick de Mars).
